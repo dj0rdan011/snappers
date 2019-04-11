@@ -54,33 +54,207 @@
         <section>
             <h2 class="icon">Contact form</h2>
             <div class="form">
-                <form>
-                    <dl>
-                        <dt><span class="required">お名前</span></dt>
-                        <dd><input type="text" name="name" class="name" required></dd>
-                        <dt><span class="required">メールアドレス</span></dt>
-                        <dd><input type="email" name="email" class="email" required></dd>
-                        <dt>お電話番号</dt>
-                        <dd><input type="tell" name="tell" class="tell"></dd>
-                        <dt>お問い合わせ種別</dt>
-                        <dd>
-                            <select name="type" class="type">
-                                <option value="撮影のご依頼">撮影のご依頼</option>
-                                <option value="講演・各種メディア出演のご依頼">講演・各種メディア出演のご依頼</option>
-                                <option value="その他お問い合わせ">その他お問い合わせ</option>
-                            </select></dd>
-                        <dt>ご希望のご連絡方法</dt>
-                        <dd><input type="radio" name="contact" value="Eメール">Eメール
-                            <input type="radio" name="contact" value="お電話">お電話</dd>
-                        <dt>メッセージ</dt>
-                        <dd><textarea name="massage" class="massage"></textarea></dd>
-                    </dl>
-                    <button type="submit" class="btn">送信</button>
-                </form>
-                <div class="attention">
-                    <p>※<span class="required"></span>のついている項目は必須項目です。<br>
-                       ※メッセージ送信後、48時間以内に担当者よりご連絡致します。</p>
-                </div>
+                <form action="https://app.line-next.com/api/new" method="get" data-parsley-validate="" novalidate="">
+          <a href="https://bell-face.com/connect/" target="_blank"><img src="https://line-next.com/wp/wp-content/themes/sango-theme-child/lp/images/banner.png" class="fit hidden-phone" alt="御社のパソコン画面上で気軽に打ち合わせできます！"></a>
+          <div class="row dynamic">
+            <div class="grid5"><span class="required">必須</span><label for="">お名前</label></div>
+            <div class="grid7"><input type="text" name="name" class="half" required="" placeholder="姓"><input type="text" name="first_name" class="half" required="" placeholder="名"></div>
+          </div>
+          <div class="row dynamic">
+            <div class="grid5"><span class="required">必須</span><label for="">企業名</label></div>
+            <div class="grid7"><input type="text" name="company" required=""></div>
+          </div>
+          <div class="row dynamic">
+            <div class="grid5"><span class="required">必須</span><label for="">業種</label></div>
+            <div class="grid7"><input type="text" name="industry" required=""></div>
+          </div>
+          <div class="row dynamic">
+            <div class="grid5"><span class="required">必須</span><label for="">役職</label></div>
+            <div class="grid7">
+              <select name="post" required="">
+                  <option value="社長・代表取締役">社長・代表取締役</option>
+                  <option value="取締役・執行役員">取締役・執行役員</option>
+                  <option value="専務・常務・監査役">専務・常務・監査役</option>
+                  <option value="本部長・事業部長">本部長・事業部長</option>
+                  <option value="部長">部長</option>
+                  <option value="次長">次長</option>
+                  <option value="課長">課長</option>
+                  <option value="係長">係長</option>
+                  <option value="主任・リーダー・チーフ・店長">主任・リーダー・チーフ・店長</option>
+                  <option value="一般社員">一般社員</option>
+                  <option value="その他">その他</option>
+              </select>
+              </div>
+          </div>          
+          <div class="row dynamic">
+            <div class="grid5"><span class="required">必須</span><label for="">メールアドレス</label></div>
+            <div class="grid7"><input type="email" name="email" placeholder="example@example.com" required=""></div>
+          </div>
+          <div class="row dynamic">
+            <div class="grid5"><span class="required">必須</span><label for="">電話番号</label></div>
+            <div class="grid7"><input type="text" name="tel" placeholder="01-234-5678" required="" data-parsley-pattern="^[\d\+\-\.\(\)\/\s]*$"></div>
+          </div>
+          <div class="row dynamic">
+            <div class="grid5"><span class="required">必須</span><label for="">紹介者</label></div>
+            <div class="grid7">
+              <input type="radio" name="introduce" value="1" data-parsley-multiple="introduce">あり<br>
+              <input type="radio" name="introduce" value="0" checked="" data-parsley-multiple="introduce">なし
+            </div>
+          </div>
+          <div class="row dynamic hidden introducer">
+            <div class="grid5"><span class="empty"></span><label for="">紹介者名</label></div>
+            <div class="grid7"><input type="text" name="introducer"></div>
+          </div>
+          <div class="row dynamic">
+            <div class="grid5"><span class="empty"></span><label for="">自由記入欄</label></div>
+            <div class="grid7"><textarea name="message" id="" cols="30" rows="10"></textarea></div>
+          </div>
+          <div class="row dynamic">
+            <div class="grid12 privacydiv">
+              <p>
+<strong>＜プライバシーポリシー＞</strong>
+株式会社アローリンク（以下「当社」といいます）は、本サイトをご利用になる方（以下「利用者」といいます）のプライバシーを尊重し、利用者の個人情報（以下の定義に従います）の管理に細心の注意を払い、これを適正に取り扱います。
+
+<strong>個人情報保護方針</strong>
+事業者の代表者は，個人情報保護の理念を明確にした上で，次の事項を含む個人情報保護方針を定めるとともに，これを実行し維持しなければならない。
+a) 事業の内容及び規模を考慮した適切な個人情報の取得，利用及び提供に関すること（特定された利用
+目的の達成に必要な範囲を超えた個人情報の取扱い（以下，“目的外利用”という。）を行わないこと
+及びそのための措置を講じることを含む。）。
+b) 個人情報への不正アクセス，個人情報の漏えい，滅失又はき損の防止並びに是正に関すること。
+c) 苦情対応に関すること。
+d) 個人情報の取扱いに関する法令，国が定める指針及びその他の規範を遵守すること。
+e) 個人情報保護マネジメントシステムの継続的改善に関すること。
+f) 代表者の氏名
+事業者の代表者は，この方針を文書（電子的方式，磁気的方式その他人の知覚によっては認識できない方式で作られる記録を含む。以下，同じ。）化し，従業者に周知させるとともに，一般の人が入手可能な措置を講じなければならない。
+
+<strong>当社の個人情報の取り扱い</strong>
+当社における個人情報の取り扱いは、個人情報保護方針に基づいて行われます。
+
+<strong>個人情報の定義</strong>
+個人情報とは、利用者個人に関する情報であって、当該情報に含まれる氏名、住所、電話番号、メールアドレス、勤務先、役職その他の記述等により利用者個人を識別することができるものをいいます。また、その情報のみでは識別できない場合でも、他の情報と容易に照合することができ、それにより結果的に利用者個人を識別することができるものも個人情報に含まれます。
+
+<strong>個人情報の利用目的</strong>
+(1)利用者の個人認証及び利用者向け本サービスの提供
+(2)本サービスの利用に伴う連絡・メールマガジン・DM・各種お知らせ等の配信・送付
+(3)本サービスの改善・新規サービスの開発およびマーケティング
+(4)本サービスに関するご意見、お問い合わせ
+
+<strong>個人情報の変更</strong>
+利用者は得られた個人情報をいつでも確認・変更・追加・削除することができます。
+
+<strong>個人情報の第三者への提供</strong>
+利用者の個人情報について、利用者本人の同意を得ずに利用企業等の第三者に提供することは原則いたしません。利用者の同意を得た場合、提供先を特定した上で、利用者の氏名、電話番号、メールアドレスを提供します。ただし以下の各号に定める場合は、利用者の個人情報を提供することがあります。
+(1)人の生命、身体または財産の保護のために必要がある場合であって、本人の同意を得ることが困難である場合。
+(2)公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって、利用者本人の同意を得ることが困難である場合。
+(3)国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって、利用者本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがある場合。
+(4)裁判所、検察庁、警察、弁護士会、消費者センターまたはこれらに準じた権限を有する機関から、個人情報についての開示を求められた場合。
+(5)利用者本人から明示的に第三者への開示または提供を求められた場合。
+(6)法令により開示または提供が許容されている場合。
+
+<strong>外部委託について</strong>
+当社は個人情報の取り扱いの全部または一部を外部に委託する場合があります。委託を行う場合には、充分な個人情報保護水準を確保していることを条件として委託先を選定し、個人情報保護に関する契約を結んだ上で行います。又、当該委託先における管理については必要かつ適切な監督を行います。
+
+<strong>統計データの利用</strong>
+当社は提供された個人情報をもとに、個人を特定できないように加工した統計データを作成することがあります。個人を特定できない統計データについては、当社は何ら制約なく利用することができるものとします。なお、この場合の著作権は当社に帰属するものとします。
+<strong>個人情報提供の任意性と提供しなかった場合に生じる結果について</strong>
+当社は、利用者本人からの求めにより、本件により取得した個人情報（開示対象）の利用目的の通知・開示・内容の訂正・追加または削除・利用の停止・消去（「開示等」といいます。）に応じます。なお、その際には、個人を識別できる情報により、利用者本人であることを確認します。利用者本人以外が個人を識別できる情報を使用した場合、当社は責任を負わないものとします。
+
+<strong>個人情報の管理について</strong>
+当社は個人情報への不当なアクセスまたは個人情報の紛失、破壊、漏洩等の危険に対して、技術面および組織面において必要かつ適切な安全対策を継続的に講じるよう努めます。また、当社は個人情報の保護に関する法令、業界規範・慣習、公序良俗を遵守します。<br>
+<br>
+<strong>個人情報のお問い合せ先</strong>
+株式会社アローリンク
+安東由歩　<a href="mailto:linenext@arrowlink.co.jp">linenext@arrowlink.co.jp</a>
+<br>
+<br>
+<strong>next»デモ版＜利用規約＞</strong>
+この利用規約（以下，「本規約」といいます。）は，株式会社アローリンク（以下，「当社」といいます。）がこのウェブサイト上で提供するサービス（以下，「本サービス」といいます。）の利用条件を定めるものです。本サービスを利用する皆様（以下，「ユーザー」といいます。）には，本規約に従って，本サービスをご利用いただきます。
+
+<strong>第1条（適用）</strong>
+本規約は，ユーザーと当社との間の本サービスの利用に関わる一切の関係に適用されるものとします。
+
+<strong>第2条（WEB申込）</strong>
+ユーザーが当社の定める方法によって申込をし，当社がこれを承認することによって，利用登録が完了するものとします。
+承認の際にはお電話にてご連絡をさせていただきます。
+当社は，申込者に以下の事由があると判断した場合，申込を承認しないことがあり，その理由については一切の開示義務を負わないものとします。
+（1）申込に際して虚偽の事項を届け出た場合
+（2）本規約に違反したことがある者からの申請である場合
+（3）その他，当社が利用登録を相当でないと判断した場合
+
+<strong>第3条（ユーザーIDおよびパスワードの管理）</strong>
+ユーザーは，自己の責任において，本サービスのユーザーIDおよびパスワードを管理するものとします。
+ユーザーは，いかなる場合にも，ユーザーIDおよびパスワードを第三者に譲渡または貸与することはできません。当社は，ユーザーIDとパスワードの組み合わせが登録情報と一致してログインされた場合には，そのユーザーIDを登録しているユーザー自身による利用とみなします。
+
+<strong>第5条（禁止事項）</strong>
+ユーザーは，本サービスの利用にあたり，以下の行為をしてはなりません。
+（1）法令または公序良俗に違反する行為
+（2）犯罪行為に関連する行為
+（3）当社のサーバーまたはネットワークの機能を破壊したり，妨害したりする行為
+（4）当社のサービスの運営を妨害するおそれのある行為
+（5）他のユーザーに関する個人情報等を収集または蓄積する行為
+（6）他のユーザーに成りすます行為
+（7）当社のサービスに関連して，反社会的勢力に対して直接または間接に利益を供与する行為
+（8）その他，当社が不適切と判断する行為
+
+<strong>第6条（本サービスの提供の停止等）</strong>
+当社は，以下のいずれかの事由があると判断した場合，ユーザーに事前に通知することなく本サービスの全部または一部の提供を停止または中断することができるものとします。
+（1）本サービスにかかるコンピュータシステムの保守点検または更新を行う場合
+（2）地震，落雷，火災，停電または天災などの不可抗力により，本サービスの提供が困難となった場合
+（3）コンピュータまたは通信回線等が事故により停止した場合
+（4）その他，当社が本サービスの提供が困難と判断した場合
+当社は，本サービスの提供の停止または中断により，ユーザーまたは第三者が被ったいかなる不利益または損害について，理由を問わず一切の責任を負わないものとします。
+
+<strong>第7条（利用制限および登録抹消）</strong>
+当社は，以下の場合には，事前の通知なく，ユーザーに対して，本サービスの全部もしくは一部の利用を制限し，またはユーザーとしての登録を抹消することができるものとします。
+（1）本規約のいずれかの条項に違反した場合
+（2）登録事項に虚偽の事実があることが判明した場合
+（3）その他，当社が本サービスの利用を適当でないと判断した場合
+当社は，本条に基づき当社が行った行為によりユーザーに生じた損害について，一切の責任を負いません。
+
+<strong>第8条（免責事項）</strong>
+当社の債務不履行責任は，当社の故意または重過失によらない場合には免責されるものとします。
+当社は，何らかの理由によって責任を負う場合にも，通常生じうる損害の範囲内かつ有料サービスにおいては代金額（継続的サービスの場合には1か月分相当額）の範囲内においてのみ賠償の責任を負うものとします。
+当社は，本サービスに関して，ユーザーと他のユーザーまたは第三者との間において生じた取引，連絡または紛争等について一切責任を負いません。
+
+<strong>第9条（サービス内容の変更等）</strong>
+当社は，ユーザーに通知することなく，本サービスの内容を変更しまたは本サービスの提供を中止することができるものとし，これによってユーザーに生じた損害について一切の責任を負いません。
+
+<strong>第10条（利用規約の変更）</strong>
+当社は，必要と判断した場合には，ユーザーに通知することなくいつでも本規約を変更することができるものとします。
+
+<strong>第11条（通知または連絡）</strong>
+ユーザーと当社との間の通知または連絡は，当社の定める方法によって行うものとします。
+
+<strong>第12条（権利義務の譲渡の禁止）</strong>
+ユーザーは，当社の書面による事前の承諾なく，利用契約上の地位または本規約に基づく権利もしくは義務を第三者に譲渡し，または担保に供することはできません。
+
+<strong>第13条（準拠法・裁判管轄）</strong>
+本規約の解釈にあたっては，日本法を準拠法とします。
+本サービスに関して紛争が生じた場合には，当社の本店所在地を管轄する裁判所を専属的合意管轄とします。
+
+
+※本サービスは申込より30日間無料で利用できるものとします。無料期間の30日間経過後に自動的に利用停止致します。
+※本契約に際してはデモアカウントでの利用データの移行は出来ません。
+              </p>
+            </div>
+          </div>
+          <div class="row dynamic">
+            <div class="grid12">
+              <span class="required">必須</span>
+              <input type="checkbox" data-required="privacy" name="privacy" data-parsley-multiple="privacy"><label for="">プライバシーポリシーと<br class="visible-phone">トライアル同意事項に同意する</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="grid12">
+              <div class="g-recaptcha" data-sitekey="6Ldw6j8UAAAAAFKXHL2cox0RaKYugIiZHRwgppot"><div style="width: 304px; height: 78px;"><div><iframe src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Ldw6j8UAAAAAFKXHL2cox0RaKYugIiZHRwgppot&amp;co=aHR0cHM6Ly9saW5lLW5leHQuY29tOjQ0Mw..&amp;hl=ja&amp;v=v1554100419869&amp;size=normal&amp;cb=v6qhwt66be2o" width="304" height="78" role="presentation" name="a-4fv2i8y37s2t" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div></div>
+            </div>
+          </div>
+          <div class="submit">
+            <input type="submit" class="button disabled" data-required="privacy" value="送信">
+          </div>
+          <div id="message"></div>
+
+        </form>
             </div>
         </section>
     </div>
